@@ -23,7 +23,7 @@
 #define NUM_R3  KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, _______
 
 #define MEDIA_L1 TRNS
-#define MEDIA_L2 TRNS
+#define MEDIA_L2 _______, _______, KC_F7, KC_F8, _______
 #define MEDIA_L3 TRNS
 
 #define MEDIA_R1 _______, KC_MUTE, KC_MPLY, KC_MSTP, _______

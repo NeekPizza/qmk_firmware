@@ -31,10 +31,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_LCTL:
         case KC_RCTL:
-#ifdef OCEAN_DREAM_ENABLE
+          #ifdef OCEAN_DREAM_ENABLE
             is_calm = (record->event.pressed) ? true : false;
-#endif
-            break;
+          #endif
+          break;
     }
     return true;
 }
