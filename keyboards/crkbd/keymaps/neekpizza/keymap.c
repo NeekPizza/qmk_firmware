@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_MEDIA] = LAYOUT_split_3x5_3(
     _______, _______, _______, _______, _______,         KC_TRNS, KC_MUTE, KC_MPLY, KC_MSTP, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
+    KC_TRNS, KC_TRNS, KC_F8,   KC_F7,   KC_TRNS,         KC_TRNS, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
     KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                       KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS
   ),
