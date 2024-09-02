@@ -1,28 +1,30 @@
 #include QMK_KEYBOARD_H
 #include "neekpizza.h"
 #include "ocean_dream.h"
+
 #define LAYOUT_wrapper_3x5_3(...) LAYOUT_split_3x5_3(__VA_ARGS__)
+#define LAYOUT_crkbd_wrapper(...) LAYOUT_wrapper_3x5_3(__VA_ARGS__)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_wrapper_3x5_3(
-    BASE_L1, BASE_R1,
-    BASE_L2, BASE_R2,
-    BASE_L3, BASE_R3,
-     OSM(MOD_MEH),      MO(1),      KC_ESC,     KC_SPC, MO(2), OSM(MOD_HYPR)
+  [_BASE] = LAYOUT_crkbd_wrapper(
+    __________________BASE_L1__________________,  __________________BASE_R1__________________,
+    __________________BASE_L2__________________,  __________________BASE_R2__________________,
+    __________________BASE_L3__________________,  __________________BASE_R3__________________,
+                    OSM(MOD_MEH), MO(1), KC_ESC,  KC_SPC, MO(2), OSM(MOD_HYPR)
   ),
 
-  [_NUM] = LAYOUT_split_3x5_3(
-    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,            KC_6,    KC_7,    KC_8,    KC_9,     KC_0,
-    KC_GRV,  KC_TRNS, KC_LBRC, KC_RBRC, KC_TRNS,         KC_TRNS,   KC_EQL,  KC_MINS, KC_BSLS,  KC_QUOT,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_SNIP,         KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT, KC_TRNS,
-                      KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_SPC
+  [_NUM] = LAYOUT_crkbd_wrapper(
+    __________________NUM_L1___________________,  __________________NUM_R1___________________,
+    __________________NUM_L2___________________,  __________________NUM_R2___________________,
+    __________________NUM_L3___________________,  __________________NUM_R3___________________,
+                      KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS
   ),
 
-  [_MEDIA] = LAYOUT_split_3x5_3(
-    _______, _______, _______, _______, _______,         KC_TRNS, KC_MUTE, KC_MPLY, KC_MSTP, KC_TRNS,
-    KC_TRNS, KC_TRNS, KC_F8,   KC_F7,   KC_TRNS,         KC_TRNS, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
-    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                      KC_TRNS, KC_TRNS, KC_TRNS,         KC_TRNS, KC_TRNS, KC_TRNS
+  [_MEDIA] = LAYOUT_crkbd_wrapper(
+    __________________MEDIA_L1_________________,  __________________MEDIA_R1_________________,
+    __________________MEDIA_L2_________________,  __________________MEDIA_R2_________________,
+    __________________MEDIA_L3_________________,  __________________MEDIA_R3_________________,
+                      KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_TRNS, KC_TRNS
   ),
 };
 
