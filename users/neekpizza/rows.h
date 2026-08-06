@@ -11,7 +11,7 @@
 
 
 #define __________________BASE_R1__________________ KC_Y, KC_U, KC_I,        KC_O,        KC_P
-#define __________________BASE_R2__________________ KC_H,       KC_J, GUI_T(KC_K), SFT_T(KC_L), CTL_T(KC_SCLN)
+#define __________________BASE_R2__________________ KC_H,       KC_J, RGUI_T(KC_K), RSFT_T(KC_L), RCTL_T(KC_SCLN)
 #define __________________BASE_R3__________________ KC_N,       KC_M, KC_COMM,     KC_DOT,      KC_SLSH
 
 #define __________________NUM_L1___________________ KC_1,    KC_2,    KC_3,    KC_4,    KC_5
