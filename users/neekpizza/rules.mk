@@ -1,29 +1,19 @@
 SRC += neekpizza.c
 
-ifdef OLED_ENABLE
-  	SRC += oled.c
-	SRC += ocean_dream.c
-endif
+# NOTE: use ifeq/ifneq, not ifdef. Make's ifdef tests whether a variable is
+# *defined*, so `OLED_ENABLE = no` would still pass an ifdef check and drag
+# oled.c into boards that have no OLED at all.
+ifeq ($(strip $(OLED_ENABLE)), yes)
+    SRC += oled.c
 
-ifeq ($(strip $(OLED_DRIVER_ENABLE)), yes)
-    #... your code here...
-	ifdef BONGO_CAT_ENABLE
-        ifeq ($(strip $(BONGO_CAT_ENABLE)), yes)
-            SRC += bongo_cat.c
-            OPT_DEFS += -DBONGO_CAT_ENABLE
-        endif
-    endif
-    ifndef BONGO_CAT_ENABLE
+    # Both animations default on when the OLED is on; set either to `no`
+    # in a keymap's rules.mk to opt out.
+    ifneq ($(strip $(BONGO_CAT_ENABLE)), no)
         SRC += bongo_cat.c
         OPT_DEFS += -DBONGO_CAT_ENABLE
     endif
-    ifdef OCEAN_DREAM_ENABLE
-        ifeq ($(strip $(OCEAN_DREAM_ENABLE)), yes)
-            SRC += ocean_dream.c
-            OPT_DEFS += -DOCEAN_DREAM_ENABLE
-        endif
-    endif
-    ifndef OCEAN_DREAM_ENABLE
+
+    ifneq ($(strip $(OCEAN_DREAM_ENABLE)), no)
         SRC += ocean_dream.c
         OPT_DEFS += -DOCEAN_DREAM_ENABLE
     endif
